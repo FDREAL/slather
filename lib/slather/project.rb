@@ -338,6 +338,8 @@ module Slather
         extend(Slather::CoverageService::Hardcover)
       when :terminal
         extend(Slather::CoverageService::SimpleOutput)
+      when :env_variable
+        extend(Slather::CoverageService::EnvVariable)
       when :gutter_json
         extend(Slather::CoverageService::GutterJsonOutput)
       when :cobertura_xml

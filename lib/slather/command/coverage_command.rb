@@ -13,6 +13,7 @@ class CoverageCommand < Clamp::Command
   option ["--simple-output", "-s"], :flag, "Output coverage results to the terminal"
   option ["--gutter-json", "-g"], :flag, "Output coverage results as Gutter JSON format"
   option ["--cobertura-xml", "-x"], :flag, "Output coverage results as Cobertura XML format"
+  option ["--env-variable", "-e"], :flag, "Post coverage results to env variable SLATHER_COVERAGE"
   option ["--json"], :flag, "Output coverage results as simple JSON"
   option ["--html"], :flag, "Output coverage results as static html pages"
   option ["--show"], :flag, "Indicate that the static html pages will open automatically"
@@ -110,6 +111,8 @@ class CoverageCommand < Clamp::Command
       project.coverage_service = :coveralls
     elsif simple_output?
       project.coverage_service = :terminal
+    elsif env_variable?
+      project.coverage_service = :env_variable
     elsif gutter_json?
       project.coverage_service = :gutter_json
     elsif cobertura_xml?

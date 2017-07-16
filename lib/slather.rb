@@ -11,6 +11,7 @@ require 'slather/coverage_service/gutter_json_output'
 require 'slather/coverage_service/simple_output'
 require 'slather/coverage_service/html_output'
 require 'slather/coverage_service/json_output'
+require 'slather/coverage_service/env_variable'
 require 'cfpropertylist'
 
 module Slather
