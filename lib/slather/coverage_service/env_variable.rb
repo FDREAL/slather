@@ -28,8 +28,8 @@ module Slather
         end
 
         total_percentage = decimal_f([(total_project_lines_tested / total_project_lines.to_f) * 100.0])
-        puts "Test Coverage: #{total_percentage}%"
-        ENV["SLATHER_COVERAGE"] = total_percentage
+        puts "Test Coverage Env: #{total_percentage}%"
+        ENV["SLATHER_COVERAGE"] = "#{total_percentage}"
       end
 
     end
